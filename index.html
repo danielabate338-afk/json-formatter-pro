@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Enterprise-grade JSON formatter, validator and analyzer." />
+  <title>JSON Formatter Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="logo">JSON<span>Formatter</span> Pro</h1>
+    <div class="toolbar" role="toolbar" aria-label="Quick actions">
+      <button id="btn-sample" class="btn ghost" type="button">Load Sample</button>
+      <button id="btn-clear" class="btn ghost" type="button">Clear</button>
+      <select id="indent-select" class="btn ghost" aria-label="Indentation">
+        <option value="2">2 spaces</option>
+        <option value="4">4 spaces</option>
+      </select>
+      <button id="btn-format" class="btn primary" type="button">Format &amp; Analyze</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="panel" aria-labelledby="input-label">
+      <div class="panel-head">
+        <h2 id="input-label">Input</h2>
+        <span id="input-stats" class="stats" aria-live="polite"></span>
+      </div>
+      <label class="sr-only" for="json-input">JSON input</label>
+      <textarea id="json-input" spellcheck="false" placeholder='Paste JSON here, e.g. {"name":"Ada","roles":["dev","math"]}'></textarea>
+      <div id="error-card" class="error-card hidden" role="alert"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="output-label">
+      <div class="panel-head">
+        <h2 id="output-label">Output</h2>
+        <div class="panel-actions">
+          <button id="btn-copy" class="btn ghost" type="button">Copy</button>
+          <button id="btn-download" class="btn ghost" type="button">Download</button>
+        </div>
+      </div>
+      <pre id="json-output" class="code" aria-live="polite"></pre>
+    </section>
+  </main>
+
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
